@@ -7,26 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="loading-screen">
-        <h1 class="loading-header">🥰Happy Birthday kabbb🥰</h1>
-        <p class="loading-subtitle">เซอไพรส์อะไรกันน้าาาา</p>
-        <div class="loading-countdown">
-            <div class="countdown-unit">
-                <span id="hours" class="countdown-value">00</span>
-                <span class="countdown-label">Hours</span>
-            </div>
-            <div class="countdown-unit">
-                <span id="minutes" class="countdown-value">00</span>
-                <span class="countdown-label">Minutes</span>
-            </div>
-            <div class="countdown-unit">
-                <span id="seconds" class="countdown-value">00</span>
-                <span class="countdown-label">Seconds</span>
-            </div>
-        </div>
-    </div>
-
-    <div id="main-content" class="hidden">
+    <div id="main-content">
         <div class="container">
             <div class="card-birthday">
                 <h1 class="bounce-in">Happy Birthday Kubbb!</h1>
@@ -35,53 +16,53 @@
             </div>
             <div class="photo-gallery">
                 <div class="photo-item fade-in photo-1"
-                     style="background-image: url('img/CMI1.JPG');"
-                     data-src="img/CMI1.JPG"
+                     style="background-image: url('CMI1.JPG');"
+                     data-src="CMI1.JPG"
                      data-text="แฟนตอนนั่งรถที่เค้าขับไปเที่ยวด้วยกันครั้งแรก">
                 </div>
                 <div class="photo-item fade-in photo-2"
-                     style="background-image: url('img/CMI2.JPG');"
-                     data-src="img/CMI2.JPG"
+                     style="background-image: url('CMI2.JPG');"
+                     data-src="CMI2.JPG"
                      data-text="ตอนไปเที่ยวแล้วแวะกินอเมซอน">
                 </div>
                 <div class="photo-item fade-in photo-3"
-                     style="background-image: url('img/DM1.JPG');"
-                     data-src="img/DM1.JPG"
+                     style="background-image: url('DM1.JPG');"
+                     data-src="DM1.JPG"
                      data-text="ถ่ายเล่นกับแฟนที่หอ">
                 </div>
                 <div class="photo-item fade-in photo-4"
-                     style="background-image: url('img/DM2.JPG');"
-                     data-src="img/DM2.JPG"
+                     style="background-image: url('DM2.JPG');"
+                     data-src="DM2.JPG"
                      data-text="แฟนหุ่นฉวยมาก">
                 </div>
                 <div class="photo-item fade-in photo-5"
-                     style="background-image: url('img/FS1.JPG');"
-                     data-src="img/FS1.JPG"
+                     style="background-image: url('FS1.JPG');"
+                     data-src="FS1.JPG"
                      data-text="ตอนกลับบ้านปี2">
                 </div>
                 <div class="photo-item fade-in photo-6"
-                     style="background-image: url('img/LUGA.JPG');"
-                     data-src="img/LUGA.JPG"
+                     style="background-image: url('LUGA.JPG');"
+                     data-src="LUGA.JPG"
                      data-text="พี่ลูก้าเองค้าบ">
                 </div>
                 <div class="photo-item fade-in photo-7"
-                     style="background-image: url('img/TIGER.JPG');"
-                     data-src="img/TIGER.JPG"
+                     style="background-image: url('TIGER.JPG');"
+                     data-src="TIGER.JPG"
                      data-text="เกอไม่ไหวแล้วเกอจะนอน">
                 </div>
                 <div class="photo-item fade-in photo-8"
-                     style="background-image: url('img/TT1.png');"
-                     data-src="img/TT1.png"
+                     style="background-image: url('TT1.png');"
+                     data-src="TT1.png"
                      data-text="แอบเซปคลิปติ๊กต๊อกของแฟนก่อนคบกัน">
                 </div>
                 <div class="photo-item fade-in photo-9"
-                     style="background-image: url('img/TV1.JPG');"
-                     data-src="img/TV1.JPG"
+                     style="background-image: url('TV1.JPG');"
+                     data-src="TV1.JPG"
                      data-text="ตอยไปเทียวงานคริศต์มาสในเมืองด้วยกัน">
                 </div>
                 <div class="photo-item fade-in photo-10"
-                     style="background-image: url('img/TV2.JPG');"
-                     data-src="img/TV2.JPG"
+                     style="background-image: url('TV2.JPG');"
+                     data-src="TV2.JPG"
                      data-text="แฟนไปทำงานที่บ้านเพื่อน">
                 </div>
             </div>
@@ -98,102 +79,58 @@
         </div>
     </div>
     
-    <script >
-       document.addEventListener('DOMContentLoaded', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    const mainContent = document.getElementById('main-content');
-    const hoursElement = document.getElementById('hours');
-    const minutesElement = document.getElementById('minutes');
-    const secondsElement = document.getElementById('seconds');
-    
-    // โค้ดเดิมสำหรับ Modal
-    const modal = document.getElementById("photoModal");
-    const modalImage = document.getElementById("modal-image");
-    const modalText = document.getElementById("modal-text");
-    const photoItems = document.querySelectorAll(".photo-item");
-    const closeButton = document.querySelector(".close-button");
-    const prevButton = document.querySelector(".prev");
-    const nextButton = document.querySelector(".next");
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("photoModal");
+            const modalImage = document.getElementById("modal-image");
+            const modalText = document.getElementById("modal-text");
+            const photoItems = document.querySelectorAll(".photo-item");
+            const closeButton = document.querySelector(".close-button");
+            const prevButton = document.querySelector(".prev");
+            const nextButton = document.querySelector(".next");
 
-    let currentPhotoIndex = 0;
+            let currentPhotoIndex = 0;
 
-    function showModal(index) {
-        currentPhotoIndex = index;
-        const item = photoItems[currentPhotoIndex];
-        const imgSrc = item.getAttribute("data-src");
-        const imgText = item.getAttribute("data-text");
-        
-        modalImage.src = imgSrc;
-        modalText.textContent = imgText;
-        modal.style.display = "block";
-    }
-
-    function showNext() {
-        currentPhotoIndex = (currentPhotoIndex + 1) % photoItems.length;
-        showModal(currentPhotoIndex);
-    }
-
-    function showPrev() {
-        currentPhotoIndex = (currentPhotoIndex - 1 + photoItems.length) % photoItems.length;
-        showModal(currentPhotoIndex);
-    }
-
-    photoItems.forEach((item, index) => {
-        item.addEventListener("click", () => {
-            showModal(index);
-        });
-    });
-
-    closeButton.addEventListener("click", () => {
-        modal.style.display = "none";
-    });
-
-    window.addEventListener("click", (event) => {
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    });
-
-    prevButton.addEventListener("click", showPrev);
-    nextButton.addEventListener("click", showNext);
-
-    // โค้ดใหม่สำหรับตัวนับถอยหลัง
-    function startCountdown() {
-        const updateCountdown = () => {
-            const now = new Date();
-            const midnight = new Date(now);
-            midnight.setHours(24, 0, 0, 0);
-
-            const timeDifference = midnight.getTime() - now.getTime();
-
-            if (timeDifference <= 0) {
-                loadingScreen.classList.add('hidden');
-                mainContent.classList.remove('hidden');
-                // เพิ่ม animation เล็กน้อยตอนเปิด
-                setTimeout(() => {
-                    mainContent.style.opacity = 1;
-                }, 10);
-                clearInterval(countdownInterval);
-                return;
+            function showModal(index) {
+                currentPhotoIndex = index;
+                const item = photoItems[currentPhotoIndex];
+                const imgSrc = item.getAttribute("data-src");
+                const imgText = item.getAttribute("data-text");
+                
+                modalImage.src = imgSrc;
+                modalText.textContent = imgText;
+                modal.style.display = "block";
             }
 
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+            function showNext() {
+                currentPhotoIndex = (currentPhotoIndex + 1) % photoItems.length;
+                showModal(currentPhotoIndex);
+            }
 
-            const pad = (num) => String(num).padStart(2, '0');
+            function showPrev() {
+                currentPhotoIndex = (currentPhotoIndex - 1 + photoItems.length) % photoItems.length;
+                showModal(currentPhotoIndex);
+            }
 
-            hoursElement.textContent = pad(hours);
-            minutesElement.textContent = pad(minutes);
-            secondsElement.textContent = pad(seconds);
-        };
+            photoItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    showModal(index);
+                });
+            });
 
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    }
+            closeButton.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
 
-    startCountdown();
-}); 
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            prevButton.addEventListener("click", showPrev);
+            nextButton.addEventListener("click", showNext);
+        }); 
     </script>
 </body>
 </html>
