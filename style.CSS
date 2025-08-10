@@ -1,0 +1,262 @@
+body {
+    background: linear-gradient(135deg, #9ECAD6, #748DAE);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+    transition: background 1s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading-screen {
+    text-align: center;
+    color: white;
+}
+
+.loading-header {
+    font-size: 2.5rem;
+    color: #F5CBCB;
+}
+
+.loading-subtitle {
+    font-size: 1.2rem;
+    color: #FFEAEA;
+    margin-bottom: 40px;
+}
+
+.loading-countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px 25px;
+    backdrop-filter: blur(5px);
+}
+
+.countdown-value {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F5CBCB;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    color: #FFEAEA;
+    text-transform: uppercase;
+}
+
+/* สไตล์สำหรับเนื้อหาหลัก */
+.container {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+/* ส่วนนี้จะถูกเพิ่มเมื่อเวลาหมด */
+#main-content:not(.hidden) .container {
+    opacity: 1;
+}
+
+/* โค้ด CSS เดิมของคุณทั้งหมด */
+.card-birthday {
+    background-color: #FFEAEA;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border: 2px solid #F5CBCB;
+}
+
+.card-birthday h1 {
+    font-size: 3rem;
+    color: #748DAE;
+    margin-bottom: 10px;
+}
+
+.card-birthday p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-birthday h2 {
+    font-size: 2rem;
+    color: #748DAE;
+    font-weight: bold;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.photo-item {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 3px solid #F5CBCB;
+}
+
+.photo-item:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.bounce-in {
+    animation: bounceIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+.photo-item:nth-child(1) { animation-delay: 0.2s; }
+.photo-item:nth-child(2) { animation-delay: 0.4s; }
+.photo-item:nth-child(3) { animation-delay: 0.6s; }
+.photo-item:nth-child(4) { animation-delay: 0.8s; }
+.photo-item:nth-child(5) { animation-delay: 1s; }
+.photo-item:nth-child(6) { animation-delay: 1.2s; }
+.photo-item:nth-child(7) { animation-delay: 1.4s; }
+.photo-item:nth-child(8) { animation-delay: 1.6s; }
+.photo-item:nth-child(9) { animation-delay: 1.8s; }
+.photo-item:nth-child(10) { animation-delay: 2s; }
+
+@media (max-width: 768px) {
+    .card-birthday h1 { font-size: 2.5rem; }
+    .card-birthday h2 { font-size: 1.5rem; }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #FFEAEA;
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #F5CBCB;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#modal-text {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+    padding: 15px;
+    border: 1px dashed #748DAE;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    margin-top: 15px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 15px;
+    border-radius: 50%;
+}
+
+.prev {
+    left: 15px;
+    border-radius: 50%;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
