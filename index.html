@@ -4,134 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday!!!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="main-content">
-        <div class="container">
-            <div class="card-birthday">
-                <h1 class="bounce-in">Happy Birthday Kubbb!</h1>
-                <p>ขอให้เป็นปีที่มีแต่ความสุข มีแต่รอยยิ้ม และความสำเร็จ เค้ารักแฟนน้า 🥰</p>
-                <h2>♥คุณกวิน♥</h2>
-            </div>
-            <div class="photo-gallery">
-                <div class="photo-item fade-in photo-1"
-                     style="background-image: url('CMI1.JPG');"
-                     data-src="CMI1.JPG"
-                     data-text="แฟนตอนนั่งรถที่เค้าขับไปเที่ยวด้วยกันครั้งแรก">
-                </div>
-                <div class="photo-item fade-in photo-2"
-                     style="background-image: url('CMI2.JPG');"
-                     data-src="CMI2.JPG"
-                     data-text="ตอนไปเที่ยวแล้วแวะกินอเมซอน">
-                </div>
-                <div class="photo-item fade-in photo-3"
-                     style="background-image: url('DM1.JPG');"
-                     data-src="DM1.JPG"
-                     data-text="ถ่ายเล่นกับแฟนที่หอ">
-                </div>
-                <div class="photo-item fade-in photo-4"
-                     style="background-image: url('DM2.JPG');"
-                     data-src="DM2.JPG"
-                     data-text="แฟนหุ่นฉวยมาก">
-                </div>
-                <div class="photo-item fade-in photo-5"
-                     style="background-image: url('FS1.JPG');"
-                     data-src="FS1.JPG"
-                     data-text="ตอนกลับบ้านปี2">
-                </div>
-                <div class="photo-item fade-in photo-6"
-                     style="background-image: url('LUGA.JPG');"
-                     data-src="LUGA.JPG"
-                     data-text="พี่ลูก้าเองค้าบ">
-                </div>
-                <div class="photo-item fade-in photo-7"
-                     style="background-image: url('TIGER.JPG');"
-                     data-src="TIGER.JPG"
-                     data-text="เกอไม่ไหวแล้วเกอจะนอน">
-                </div>
-                <div class="photo-item fade-in photo-8"
-                     style="background-image: url('TT1.png');"
-                     data-src="TT1.png"
-                     data-text="แอบเซปคลิปติ๊กต๊อกของแฟนก่อนคบกัน">
-                </div>
-                <div class="photo-item fade-in photo-9"
-                     style="background-image: url('TV1.JPG');"
-                     data-src="TV1.JPG"
-                     data-text="ตอยไปเทียวงานคริศต์มาสในเมืองด้วยกัน">
-                </div>
-                <div class="photo-item fade-in photo-10"
-                     style="background-image: url('TV2.JPG');"
-                     data-src="TV2.JPG"
-                     data-text="แฟนไปทำงานที่บ้านเพื่อนซ้อนกระบะไป">
-                </div>
-            </div>
-            
-            <div id="photoModal" class="modal">
-                <div class="modal-content">
-                    <span class="close-button">&times;</span>
-                    <img id="modal-image" src="" alt="Photo">
-                    <div id="modal-text"></div>
-                    <a class="prev">&#10094;</a>
-                    <a class="next">&#10095;</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modal = document.getElementById("photoModal");
-            const modalImage = document.getElementById("modal-image");
-            const modalText = document.getElementById("modal-text");
-            const photoItems = document.querySelectorAll(".photo-item");
-            const closeButton = document.querySelector(".close-button");
-            const prevButton = document.querySelector(".prev");
-            const nextButton = document.querySelector(".next");
-
-            let currentPhotoIndex = 0;
-
-            function showModal(index) {
-                currentPhotoIndex = index;
-                const item = photoItems[currentPhotoIndex];
-                const imgSrc = item.getAttribute("data-src");
-                const imgText = item.getAttribute("data-text");
-                
-                modalImage.src = imgSrc;
-                modalText.textContent = imgText;
-                modal.style.display = "block";
-            }
-
-            function showNext() {
-                currentPhotoIndex = (currentPhotoIndex + 1) % photoItems.length;
-                showModal(currentPhotoIndex);
-            }
-
-            function showPrev() {
-                currentPhotoIndex = (currentPhotoIndex - 1 + photoItems.length) % photoItems.length;
-                showModal(currentPhotoIndex);
-            }
-
-            photoItems.forEach((item, index) => {
-                item.addEventListener("click", () => {
-                    showModal(index);
-                });
-            });
-
-            closeButton.addEventListener("click", () => {
-                modal.style.display = "none";
-            });
-
-            window.addEventListener("click", (event) => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            });
-
-            prevButton.addEventListener("click", showPrev);
-            nextButton.addEventListener("click", showNext);
-        }); 
-    </script>
     <style>
         body {
     background: linear-gradient(135deg, #9ECAD6, #748DAE);
@@ -396,6 +268,134 @@
     background-color: rgba(0,0,0,0.8);
 }
     </style>
+</head>
+<body>
+    <div id="main-content">
+        <div class="container">
+            <div class="card-birthday">
+                <h1 class="bounce-in">Happy Birthday Kubbb!</h1>
+                <p>ขอให้เป็นปีที่มีแต่ความสุข มีแต่รอยยิ้ม และความสำเร็จ เค้ารักแฟนน้า 🥰</p>
+                <h2>♥คุณกวิน♥</h2>
+            </div>
+            <div class="photo-gallery">
+                <div class="photo-item fade-in photo-1"
+                     style="background-image: url('CMI1.JPG');"
+                     data-src="CMI1.JPG"
+                     data-text="แฟนตอนนั่งรถที่เค้าขับไปเที่ยวด้วยกันครั้งแรก">
+                </div>
+                <div class="photo-item fade-in photo-2"
+                     style="background-image: url('CMI2.JPG');"
+                     data-src="CMI2.JPG"
+                     data-text="ตอนไปเที่ยวแล้วแวะกินอเมซอน">
+                </div>
+                <div class="photo-item fade-in photo-3"
+                     style="background-image: url('DM1.JPG');"
+                     data-src="DM1.JPG"
+                     data-text="ถ่ายเล่นกับแฟนที่หอ">
+                </div>
+                <div class="photo-item fade-in photo-4"
+                     style="background-image: url('DM2.JPG');"
+                     data-src="DM2.JPG"
+                     data-text="แฟนหุ่นฉวยมาก">
+                </div>
+                <div class="photo-item fade-in photo-5"
+                     style="background-image: url('FS1.JPG');"
+                     data-src="FS1.JPG"
+                     data-text="ตอนกลับบ้านปี2">
+                </div>
+                <div class="photo-item fade-in photo-6"
+                     style="background-image: url('LUGA.JPG');"
+                     data-src="LUGA.JPG"
+                     data-text="พี่ลูก้าเองค้าบ">
+                </div>
+                <div class="photo-item fade-in photo-7"
+                     style="background-image: url('TIGER.JPG');"
+                     data-src="TIGER.JPG"
+                     data-text="เกอไม่ไหวแล้วเกอจะนอน">
+                </div>
+                <div class="photo-item fade-in photo-8"
+                     style="background-image: url('TT1.png');"
+                     data-src="TT1.png"
+                     data-text="แอบเซปคลิปติ๊กต๊อกของแฟนก่อนคบกัน">
+                </div>
+                <div class="photo-item fade-in photo-9"
+                     style="background-image: url('TV1.JPG');"
+                     data-src="TV1.JPG"
+                     data-text="ตอยไปเทียวงานคริศต์มาสในเมืองด้วยกัน">
+                </div>
+                <div class="photo-item fade-in photo-10"
+                     style="background-image: url('TV2.JPG');"
+                     data-src="TV2.JPG"
+                     data-text="แฟนไปทำงานที่บ้านเพื่อนซ้อนกระบะไป">
+                </div>
+            </div>
+            
+            <div id="photoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <img id="modal-image" src="" alt="Photo">
+                    <div id="modal-text"></div>
+                    <a class="prev">&#10094;</a>
+                    <a class="next">&#10095;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("photoModal");
+            const modalImage = document.getElementById("modal-image");
+            const modalText = document.getElementById("modal-text");
+            const photoItems = document.querySelectorAll(".photo-item");
+            const closeButton = document.querySelector(".close-button");
+            const prevButton = document.querySelector(".prev");
+            const nextButton = document.querySelector(".next");
+
+            let currentPhotoIndex = 0;
+
+            function showModal(index) {
+                currentPhotoIndex = index;
+                const item = photoItems[currentPhotoIndex];
+                const imgSrc = item.getAttribute("data-src");
+                const imgText = item.getAttribute("data-text");
+                
+                modalImage.src = imgSrc;
+                modalText.textContent = imgText;
+                modal.style.display = "block";
+            }
+
+            function showNext() {
+                currentPhotoIndex = (currentPhotoIndex + 1) % photoItems.length;
+                showModal(currentPhotoIndex);
+            }
+
+            function showPrev() {
+                currentPhotoIndex = (currentPhotoIndex - 1 + photoItems.length) % photoItems.length;
+                showModal(currentPhotoIndex);
+            }
+
+            photoItems.forEach((item, index) => {
+                item.addEventListener("click", () => {
+                    showModal(index);
+                });
+            });
+
+            closeButton.addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            prevButton.addEventListener("click", showPrev);
+            nextButton.addEventListener("click", showNext);
+        }); 
+    </script>
+    
 </body>
 
 </html>
